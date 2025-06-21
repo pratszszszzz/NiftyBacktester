@@ -112,10 +112,11 @@ def main():
                         if cagr > 20:
                             above_20_cagr += 1
                             top_20_names.append(symbol)
+                        st.success(f"{symbol} → CAGR: {cagr:.2f}%")
                     else:
                         negative_cagr += 1
+                        st.error(f"{symbol} → CAGR: {cagr:.2f}%")
 
-                    st.success(f"✅ {symbol} → CAGR: {cagr:.2f}%")
                 except Exception as e:
                     st.warning(f"⚠️ {symbol} failed: {e}")
 
